@@ -25,15 +25,15 @@ public class TipController {
     }
 
     @QueryMapping
-    public Tip getTipById(@Argument Integer tipId) {
-        return service.getByidTip(tipId);
+    public Tip getTipById(@Argument Integer tipid) {
+        return service.getByidTip(tipid);
     }
 
     @MutationMapping
-    public Tip createTip(@Argument Integer petId, @Argument String title, @Argument String description,
+    public Tip createTip(@Argument Integer petid, @Argument String title, @Argument String description,
             @Argument String date) {
         Tip tip = new Tip();
-        tip.setPetid(new Pet(petId)); // Crea un nuevo objeto Pet solo con el ID
+        tip.setPetid(new Pet(petid)); // Crea un nuevo objeto Pet solo con el ID
         tip.setTitle(title);
         tip.setDescription(description);
         tip.setDate(Date.valueOf(date)); // Asegúrate de convertir el String a Date correctamente
@@ -41,10 +41,10 @@ public class TipController {
     }
 
     @MutationMapping
-public Tip updateTip(@Argument Integer tipId, @Argument Integer petId, @Argument String title, @Argument String description, @Argument String date) {
-    Tip existingTip = service.getByidTip(tipId);
+public Tip updateTip(@Argument Integer tipid, @Argument Integer petid, @Argument String title, @Argument String description, @Argument String date) {
+    Tip existingTip = service.getByidTip(tipid);
     if (existingTip != null) {
-        existingTip.setPetid(new Pet(petId)); // Cambia a un objeto Pet
+        existingTip.setPetid(new Pet(petid)); // Cambia a un objeto Pet
         existingTip.setTitle(title);
         existingTip.setDescription(description);
         existingTip.setDate(Date.valueOf(date)); // Asegúrate de convertir correctamente
@@ -55,12 +55,12 @@ public Tip updateTip(@Argument Integer tipId, @Argument Integer petId, @Argument
 
 
     @MutationMapping
-    public String deleteTip(@Argument(value = "tipId") Integer tipId) {
-        Tip tip = service.getByidTip(tipId);
+    public String deleteTip(@Argument(value = "tipid") Integer tipid) {
+        Tip tip = service.getByidTip(tipid);
         if (tip == null) {
             throw new IllegalArgumentException("Tip not found");
         }
-        service.delete(tipId);
+        service.delete(tipid);
         return "Tip deleted successfully";
     }
 }

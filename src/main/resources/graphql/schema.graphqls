@@ -5,41 +5,41 @@ schema {
 
 type Query {
     getAllTips: [Tip]
-    getTipById(tipId: ID!): Tip
+    getTipById(tipid: ID!): Tip
     
     getAllPets: [Pet]
-    getPetById(petId: ID!): Pet  # Cambié Int a ID
+    getPetById(petid: ID!): Pet  # Cambié Int a ID
 }
 
 type Mutation {
     createPet(pet: PetDTO!): Pet
-    updatePet(petId: ID!, pet: PetDTO!): Pet  # Cambié Int a ID
-    deletePet(petId: ID!): String
+    updatePet(petid: ID!, pet: PetDTO!): Pet  # Cambié Int a ID
+    deletePet(petid: ID!): String
 
-    createTip(petId: ID!, title: String!, description: String!, date: String!): Tip  # Cambié Date a String
-    updateTip(tipId: ID!, petId: ID, title: String, description: String, date: String): Tip  # Cambié Date a String
-    deleteTip(tipId: ID!): String!
+    createTip(petid: ID!, title: String!, description: String!, date: String!): Tip  # Cambié Date a String
+    updateTip(tipid: ID!, petid: ID, title: String, description: String, date: String): Tip  # Cambié Date a String
+    deleteTip(tipid: ID!): String!
 }
 
 type Pet {
-    petId: ID!
-    petName: String!
+    petid: ID!
+    petname: String!
     race: String!
     species: String!
-    petImage: String
+    petimage: String
 }
 
 input PetDTO {
-    petName: String!
+    petname: String!
     race: String!
     species: String!
-    petImage: String
-    userId: Int!  
+    petimage: String
+    userid: Int!  
 }
 
 type Tip {
-    tipId: ID!
-    petId: ID!  # Referencia al ID de Pet
+    tipid: ID!
+    petid: ID!  # Referencia al ID de Pet
     title: String!
     description: String!
     date: String!

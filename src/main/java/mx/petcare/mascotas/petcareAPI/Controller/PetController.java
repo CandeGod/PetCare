@@ -28,8 +28,8 @@ public class PetController {
     }
 
     @QueryMapping
-    public Pet getPetById(@Argument Integer petId) {
-        return service.getByidPet(petId);
+    public Pet getPetById(@Argument Integer petid) {
+        return service.getByidPet(petid);
     }
 
     @MutationMapping
@@ -55,8 +55,8 @@ public Pet createPet(@Argument(value = "pet") PetDTO petDTO) {
 }
 
 @MutationMapping
-public Pet updatePet(@Argument(value = "petId") Integer petId, @Argument(value = "pet") PetDTO petDTO) {
-    Pet pet = service.findById(petId);
+public Pet updatePet(@Argument(value = "petid") Integer petid, @Argument(value = "pet") PetDTO petDTO) {
+    Pet pet = service.findById(petid);
     if (pet == null) {
         throw new IllegalArgumentException("Pet not found");
     }
@@ -87,13 +87,13 @@ public Pet updatePet(@Argument(value = "petId") Integer petId, @Argument(value =
 }
 
     @MutationMapping
-    public String deletePet(@Argument(value = "petId") Integer petId) {
-        Pet pet = service.findById(petId);
+    public String deletePet(@Argument(value = "petid") Integer petid) {
+        Pet pet = service.findById(petid);
         if (pet == null) {
             throw new IllegalArgumentException("Pet not found");
         }
 
-        service.delete(petId);
+        service.delete(petid);
         return "Pet deleted successfully";
     }
 }
