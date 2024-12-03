@@ -1,0 +1,46 @@
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type Query {
+    getAllTips: [Tip]
+    getTipById(tipId: ID!): Tip
+    
+    getAllPets: [Pet]
+    getPetById(petId: ID!): Pet  # Cambié Int a ID
+}
+
+type Mutation {
+    createPet(pet: PetDTO!): Pet
+    updatePet(petId: ID!, pet: PetDTO!): Pet  # Cambié Int a ID
+    deletePet(petId: ID!): String
+
+    createTip(petId: ID!, title: String!, description: String!, date: String!): Tip  # Cambié Date a String
+    updateTip(tipId: ID!, petId: ID, title: String, description: String, date: String): Tip  # Cambié Date a String
+    deleteTip(tipId: ID!): String!
+}
+
+type Pet {
+    petId: ID!
+    petName: String!
+    race: String!
+    species: String!
+    petImage: String
+}
+
+input PetDTO {
+    petName: String!
+    race: String!
+    species: String!
+    petImage: String
+    userId: Int!  
+}
+
+type Tip {
+    tipId: ID!
+    petId: ID!  # Referencia al ID de Pet
+    title: String!
+    description: String!
+    date: String!
+}
