@@ -39,10 +39,10 @@ public Pet createPet(@Argument(value = "pet") PetDTO petDTO) {
     }
     
     Pet pet = new Pet();
-    pet.setPetName(petDTO.getPetName());
+    pet.setPetname(petDTO.getPetName());
     pet.setRace(petDTO.getRace());
     pet.setSpecies(petDTO.getSpecies());
-    pet.setPetImage(petDTO.getPetImage());
+    pet.setPetimage(petDTO.getPetImage());
     
     // Aquí necesitas buscar el usuario por su userId y establecerlo en la mascota
     User user = userService.findById(petDTO.getUserId()); // Asegúrate de tener un UserService para esto
@@ -62,7 +62,7 @@ public Pet updatePet(@Argument(value = "petId") Integer petId, @Argument(value =
     }
 
     if (petDTO.getPetName() != null) {
-        pet.setPetName(petDTO.getPetName());
+        pet.setPetname(petDTO.getPetName());
     }
     if (petDTO.getRace() != null) {
         pet.setRace(petDTO.getRace());
@@ -71,7 +71,7 @@ public Pet updatePet(@Argument(value = "petId") Integer petId, @Argument(value =
         pet.setSpecies(petDTO.getSpecies());
     }
     if (petDTO.getPetImage() != null) {
-        pet.setPetImage(petDTO.getPetImage());
+        pet.setPetimage(petDTO.getPetImage());
     }
     
     // Actualiza el usuario asociado si se proporciona userId

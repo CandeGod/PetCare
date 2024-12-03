@@ -18,8 +18,8 @@ public class Tip {
     private Integer tipId;
     
     @ManyToOne
-    @JoinColumn(name = "PetId")
-    private Pet petId;
+    @JoinColumn(name = "petid")
+    private Pet petid;
     private String title;
     private String description;
     private Date date;
@@ -34,12 +34,12 @@ public class Tip {
     }
 
 
-    public Pet getPetId() {
-        return petId;
+    public Pet getpetid() {
+        return petid;
     }
 
-    public void setPetId(Pet petId) {
-        this.petId = petId;
+    public void setpetid(Pet petid) {
+        this.petid = petid;
     }
 
     public String getTitle() {
@@ -70,7 +70,7 @@ public class Tip {
 
     @Override
     public String toString() {
-        return "Tip [tipId=" + tipId +", petId=" + petId + ", title=" + title
+        return "Tip [tipId=" + tipId +", petid=" + petid + ", title=" + title
                 + ", description=" + description + ", date=" + date + "]";
     }
 }

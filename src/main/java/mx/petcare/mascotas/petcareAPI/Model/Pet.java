@@ -24,10 +24,10 @@ public class Pet {
     @JoinColumn(name = "UserId", nullable = false) // Indicar que no puede ser nulo
     private User user;
 
-    private String petName;
+    private String petname;
     private String race;
     private String species;
-    private String petImage;
+    private String petimage;
 
     // Constructor sin argumentos (necesario para JPA)
     public Pet() {
@@ -40,36 +40,36 @@ public class Pet {
 
     @Override
     public String toString() {
-        return "Pet [petId=" + petId + ", user=" + user + ", petName=" + petName + ", race=" + race + ", species="
-                + species + ", petImage=" + petImage + "]";
+        return "Pet [petId=" + petId + ", user=" + user + ", petname=" + petname + ", race=" + race + ", species="
+                + species + ", petimage=" + petimage + "]";
     }
 
     // Constructor para crear un objeto Pet con User
-    public Pet(User user, String petName, String race, String species, String petImage) {
+    public Pet(User user, String petname, String race, String species, String petimage) {
         this.user = user;
-        this.petName = petName;
+        this.petname = petname;
         this.race = race;
         this.species = species;
-        this.petImage = petImage;
+        this.petimage = petimage;
     }
 
     // Constructor que incluye petId, en caso de que necesites actualizar un Pet
-    public Pet(Integer petId, User user, String petName, String race, String species, String petImage) {
+    public Pet(Integer petId, User user, String petname, String race, String species, String petimage) {
         this.petId = petId;
         this.user = user;
-        this.petName = petName;
+        this.petname = petname;
         this.race = race;
         this.species = species;
-        this.petImage = petImage;
+        this.petimage = petimage;
     }
 
     // Constructor sobrecargado que acepta solo algunos parámetros
-    public Pet(User user, String petName, String race, String species) {
+    public Pet(User user, String petname, String race, String species) {
         this.user = user;
-        this.petName = petName;
+        this.petname = petname;
         this.race = race;
         this.species = species;
-        this.petImage = null; // o alguna imagen por defecto
+        this.petimage = null; // o alguna imagen por defecto
     }
 
     

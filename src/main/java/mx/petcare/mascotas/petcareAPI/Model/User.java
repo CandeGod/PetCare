@@ -10,44 +10,44 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer userId;
-    private String firstName;
-    private String lastNameP;
-    private String lastNameM;
+    private Integer userid;
+    private String firstname;
+    private String lastnamep;
+    private String lastnamem;
     private String email;
     private String phone;
     private String password;
     
-    public Integer getUserId() {
-        return userId;
+    public Integer getuserid() {
+        return userid;
     }
     
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setuserid(Integer userid) {
+        this.userid = userid;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getfirstname() {
+        return firstname;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setfirstname(String firstname) {
+        this.firstname = firstname;
     }
 
-    public String getLastNameP() {
-        return lastNameP;
+    public String getlastnamep() {
+        return lastnamep;
     }
 
-    public void setLastNameP(String lastNameP) {
-        this.lastNameP = lastNameP;
+    public void setlastnamep(String lastnamep) {
+        this.lastnamep = lastnamep;
     }
 
-    public String getLastNameM() {
-        return lastNameM;
+    public String getlastnamem() {
+        return lastnamem;
     }
 
-    public void setLastNameM(String lastNameM) {
-        this.lastNameM = lastNameM;
+    public void setlastnamem(String lastnamem) {
+        this.lastnamem = lastnamem;
     }
 
     public String getEmail() {
@@ -76,7 +76,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User [userId=" + userId + ", firstName=" + firstName + ", lastNameP=" + lastNameP + ", lastNameM="
-                + lastNameM + ", email=" + email + ", phone=" + phone + ", password=" + password + "]";
+        return "User [userid=" + userid + ", firstname=" + firstname + ", lastnamep=" + lastnamep + ", lastnamem="
+                + lastnamem + ", email=" + email + ", phone=" + phone + ", password=" + password + "]";
     }
 }
