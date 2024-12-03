@@ -15,7 +15,7 @@ public class Tip {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer tipId;
+    private Integer tipid;
     
     @ManyToOne
     @JoinColumn(name = "petid")
@@ -23,11 +23,11 @@ public class Tip {
     private String title;
     private String description;
     private Date date;
-    public Integer getTipId() {
-        return tipId;
+    public Integer getTipid() {
+        return tipid;
     }
-    public void setTipId(Integer tipId) {
-        this.tipId = tipId;
+    public void setTipid(Integer tipid) {
+        this.tipid = tipid;
     }
     public Pet getPetid() {
         return petid;
@@ -53,11 +53,17 @@ public class Tip {
     public void setDate(Date date) {
         this.date = date;
     }
-    @Override
-    public String toString() {
-        return "Tip [tipId=" + tipId + ", petid=" + petid + ", title=" + title + ", description=" + description
-                + ", date=" + date + "]";
+    public Tip(Integer tipid, Pet petid, String title, String description, Date date) {
+        this.tipid = tipid;
+        this.petid = petid;
+        this.title = title;
+        this.description = description;
+        this.date = date;
     }
+
+    public Tip(){}
+    
+    
     
     
 }
