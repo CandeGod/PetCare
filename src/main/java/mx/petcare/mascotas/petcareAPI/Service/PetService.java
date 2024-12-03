@@ -24,12 +24,12 @@ public class PetService {
         return repo.save(pet);
     }
 
-    public Pet getByidPet(Integer petId) {
-        return repo.findById(petId).orElse(null); // Usar orElse para manejar la ausencia de datos
+    public Pet getByidPet(Integer petid) {
+        return repo.findById(petid).orElse(null); // Usar orElse para manejar la ausencia de datos
     }
 
-    public void delete(Integer petId) {
-        repo.deleteById(petId);
+    public void delete(Integer petid) {
+        repo.deleteById(petid);
     }
 
     public Pet findById(Integer id) {
@@ -43,8 +43,8 @@ public class PetService {
     }
     
     // Método para buscar mascotas por nombre con paginación
-    public Page<Pet> findByPetNameContaining(String petName, int page, int size) {
+    public Page<Pet> findByPetNameContaining(String petname, int page, int size) {
         Pageable pageable = PageRequest.of(page, size);
-        return repo.findByPetNameContaining(petName, pageable);
+        return repo.findByPetnameContaining(petname, pageable);
     }
 }

@@ -4,50 +4,41 @@ package mx.petcare.mascotas.petcareAPI.dto;
 import java.sql.Date;
 
 public class TipDTO {
-    private Integer tipId;
-    private Integer petId; // Cambia a Integer si quieres usar solo el ID
+    private Integer tipid;
+    private Integer petid; // Cambia a Integer si quieres usar solo el ID
     private String title;
     private String description;
     private Date date;
-
-    // Getters y Setters
-    public Integer getTipId() {
-        return tipId;
+    public Integer getTipid() {
+        return tipid;
     }
-
-    public void setTipId(Integer tipId) {
-        this.tipId = tipId;
+    public void setTipid(Integer tipid) {
+        this.tipid = tipid;
     }
-
-    public Integer getPetId() {
-        return petId;
+    public Integer getPetid() {
+        return petid;
     }
-
-    public void setPetId(Integer petId) {
-        this.petId = petId;
+    public void setPetid(Integer petid) {
+        this.petid = petid;
     }
-
     public String getTitle() {
         return title;
     }
-
     public void setTitle(String title) {
         this.title = title;
     }
-
     public String getDescription() {
         return description;
     }
-
     public void setDescription(String description) {
         this.description = description;
     }
-
     public Date getDate() {
         return date;
     }
-
     public void setDate(Date date) {
         this.date = date;
     }
+
+   
 }

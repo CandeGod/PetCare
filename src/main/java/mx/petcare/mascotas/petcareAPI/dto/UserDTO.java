@@ -2,54 +2,54 @@ package mx.petcare.mascotas.petcareAPI.dto;
 
 
 public class UserDTO {
-    private Integer userId;
-    private String firstName;
-    private String lastNameP;
-    private String lastNameM;
+    private Integer userid;
+    private String firstname;
+    private String lastnamep;
+    private String lastnamem;
     private String email;
     private String phone;
 
     public UserDTO() {}
 
-    public UserDTO(Integer userId, String firstName, String lastNameP, String lastNameM, String email, String phone) {
-        this.userId = userId;
-        this.firstName = firstName;
-        this.lastNameP = lastNameP;
-        this.lastNameM = lastNameM;
+    public UserDTO(Integer userid, String firstname, String lastnamep, String lastnamem, String email, String phone) {
+        this.userid = userid;
+        this.firstname = firstname;
+        this.lastnamep = lastnamep;
+        this.lastnamem = lastnamem;
         this.email = email;
         this.phone = phone;
     }
 
-    public Integer getUserId() {
-        return userId;
+    public Integer getuserid() {
+        return userid;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setuserid(Integer userid) {
+        this.userid = userid;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getfirstname() {
+        return firstname;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setfirstname(String firstname) {
+        this.firstname = firstname;
     }
 
-    public String getLastNameP() {
-        return lastNameP;
+    public String getlastnamep() {
+        return lastnamep;
     }
 
-    public void setLastNameP(String lastNameP) {
-        this.lastNameP = lastNameP;
+    public void setlastnamep(String lastnamep) {
+        this.lastnamep = lastnamep;
     }
 
-    public String getLastNameM() {
-        return lastNameM;
+    public String getlastnamem() {
+        return lastnamem;
     }
 
-    public void setLastNameM(String lastNameM) {
-        this.lastNameM = lastNameM;
+    public void setlastnamem(String lastnamem) {
+        this.lastnamem = lastnamem;
     }
 
     public String getEmail() {

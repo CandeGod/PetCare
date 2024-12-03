@@ -9,5 +9,5 @@ import mx.petcare.mascotas.petcareAPI.Model.Pet;
 
 @Repository
 public interface PetRepository extends JpaRepository<Pet, Integer>{
-     Page<Pet> findByPetNameContaining(String petName, Pageable pageable);
+     Page<Pet> findByPetnameContaining(String petname, Pageable pageable);
 }

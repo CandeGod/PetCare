@@ -11,7 +11,7 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    public User findById(Integer userId) {
-        return userRepository.findById(userId).orElse(null);
+    public User findById(Integer userid) {
+        return userRepository.findById(userid).orElse(null);
     }
 }

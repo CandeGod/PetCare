@@ -18,7 +18,7 @@ public class Pet {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer petId;
+    private Integer petid;
 
     @ManyToOne
     @JoinColumn(name = "userid", nullable = false) // Indicar que no puede ser nulo
@@ -33,14 +33,14 @@ public class Pet {
     public Pet() {
     }
 
-    public Pet(Integer petId) {
-        this.petId = petId;
+    public Pet(Integer petid) {
+        this.petid = petid;
     }
 
 
     @Override
     public String toString() {
-        return "Pet [petId=" + petId + ", user=" + user + ", petname=" + petname + ", race=" + race + ", species="
+        return "Pet [petid=" + petid + ", user=" + user + ", petname=" + petname + ", race=" + race + ", species="
                 + species + ", petimage=" + petimage + "]";
     }
 
@@ -53,9 +53,9 @@ public class Pet {
         this.petimage = petimage;
     }
 
-    // Constructor que incluye petId, en caso de que necesites actualizar un Pet
-    public Pet(Integer petId, User user, String petname, String race, String species, String petimage) {
-        this.petId = petId;
+    // Constructor que incluye petid, en caso de que necesites actualizar un Pet
+    public Pet(Integer petid, User user, String petname, String race, String species, String petimage) {
+        this.petid = petid;
         this.user = user;
         this.petname = petname;
         this.race = race;

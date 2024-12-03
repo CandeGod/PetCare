@@ -34,18 +34,18 @@ public class PetController {
 
     @MutationMapping
 public Pet createPet(@Argument(value = "pet") PetDTO petDTO) {
-    if (petDTO == null || petDTO.getPetName() == null || petDTO.getRace() == null || petDTO.getSpecies() == null || petDTO.getUserId() == null) {
+    if (petDTO == null || petDTO.getPetname() == null || petDTO.getRace() == null || petDTO.getSpecies() == null || petDTO.getUserid() == null) {
         throw new IllegalArgumentException("Pet details cannot be null or empty");
     }
     
     Pet pet = new Pet();
-    pet.setPetname(petDTO.getPetName());
+    pet.setPetname(petDTO.getPetname());
     pet.setRace(petDTO.getRace());
     pet.setSpecies(petDTO.getSpecies());
-    pet.setPetimage(petDTO.getPetImage());
+    pet.setPetimage(petDTO.getPetimage());
     
-    // Aquí necesitas buscar el usuario por su userId y establecerlo en la mascota
-    User user = userService.findById(petDTO.getUserId()); // Asegúrate de tener un UserService para esto
+    // Aquí necesitas buscar el usuario por su Userid y establecerlo en la mascota
+    User user = userService.findById(petDTO.getUserid()); // Asegúrate de tener un UserService para esto
     if (user == null) {
         throw new IllegalArgumentException("User not found");
     }
@@ -61,8 +61,8 @@ public Pet updatePet(@Argument(value = "petId") Integer petId, @Argument(value =
         throw new IllegalArgumentException("Pet not found");
     }
 
-    if (petDTO.getPetName() != null) {
-        pet.setPetname(petDTO.getPetName());
+    if (petDTO.getPetname() != null) {
+        pet.setPetname(petDTO.getPetname());
     }
     if (petDTO.getRace() != null) {
         pet.setRace(petDTO.getRace());
@@ -70,13 +70,13 @@ public Pet updatePet(@Argument(value = "petId") Integer petId, @Argument(value =
     if (petDTO.getSpecies() != null) {
         pet.setSpecies(petDTO.getSpecies());
     }
-    if (petDTO.getPetImage() != null) {
-        pet.setPetimage(petDTO.getPetImage());
+    if (petDTO.getPetimage() != null) {
+        pet.setPetimage(petDTO.getPetimage());
     }
     
-    // Actualiza el usuario asociado si se proporciona userId
-    if (petDTO.getUserId() != null) {
-        User user = userService.findById(petDTO.getUserId());
+    // Actualiza el usuario asociado si se proporciona Userid
+    if (petDTO.getUserid() != null) {
+        User user = userService.findById(petDTO.getUserid());
         if (user == null) {
             throw new IllegalArgumentException("User not found");
         }

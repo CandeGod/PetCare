@@ -28,8 +28,8 @@ public class TipService {
         return repo.save(tip);
     }
 
-    public Tip getByidTip(Integer tipId){
-        return repo.findById(tipId).orElse(null);
+    public Tip getByidTip(Integer tipid){
+        return repo.findById(tipid).orElse(null);
     }
 
     public void delete(Integer tipId){
