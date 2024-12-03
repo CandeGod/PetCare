@@ -33,7 +33,7 @@ public class TipController {
     public Tip createTip(@Argument Integer petId, @Argument String title, @Argument String description,
             @Argument String date) {
         Tip tip = new Tip();
-        tip.setpetid(new Pet(petId)); // Crea un nuevo objeto Pet solo con el ID
+        tip.setPetid(new Pet(petId)); // Crea un nuevo objeto Pet solo con el ID
         tip.setTitle(title);
         tip.setDescription(description);
         tip.setDate(Date.valueOf(date)); // Asegúrate de convertir el String a Date correctamente
@@ -44,7 +44,7 @@ public class TipController {
 public Tip updateTip(@Argument Integer tipId, @Argument Integer petId, @Argument String title, @Argument String description, @Argument String date) {
     Tip existingTip = service.getByidTip(tipId);
     if (existingTip != null) {
-        existingTip.setpetid(new Pet(petId)); // Cambia a un objeto Pet
+        existingTip.setPetid(new Pet(petId)); // Cambia a un objeto Pet
         existingTip.setTitle(title);
         existingTip.setDescription(description);
         existingTip.setDate(Date.valueOf(date)); // Asegúrate de convertir correctamente

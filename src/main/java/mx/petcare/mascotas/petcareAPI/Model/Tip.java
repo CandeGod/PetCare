@@ -23,56 +23,43 @@ public class Tip {
     private String title;
     private String description;
     private Date date;
-    
-
     public Integer getTipId() {
         return tipId;
     }
-
     public void setTipId(Integer tipId) {
         this.tipId = tipId;
     }
-
-
-    public Pet getpetid() {
+    public Pet getPetid() {
         return petid;
     }
-
-    public void setpetid(Pet petid) {
+    public void setPetid(Pet petid) {
         this.petid = petid;
     }
-
     public String getTitle() {
         return title;
     }
-
     public void setTitle(String title) {
         this.title = title;
     }
-
     public String getDescription() {
         return description;
     }
-
     public void setDescription(String description) {
         this.description = description;
     }
-
-    public Date  getDate() {
+    public Date getDate() {
         return date;
     }
-
-    public void setDate(Date  date) {
+    public void setDate(Date date) {
         this.date = date;
     }
-
-    
-
     @Override
     public String toString() {
-        return "Tip [tipId=" + tipId +", petid=" + petid + ", title=" + title
-                + ", description=" + description + ", date=" + date + "]";
+        return "Tip [tipId=" + tipId + ", petid=" + petid + ", title=" + title + ", description=" + description
+                + ", date=" + date + "]";
     }
+    
+    
 }
 
 

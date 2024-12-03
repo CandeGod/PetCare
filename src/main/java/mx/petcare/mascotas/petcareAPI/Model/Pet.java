@@ -21,7 +21,7 @@ public class Pet {
     private Integer petId;
 
     @ManyToOne
-    @JoinColumn(name = "UserId", nullable = false) // Indicar que no puede ser nulo
+    @JoinColumn(name = "userid", nullable = false) // Indicar que no puede ser nulo
     private User user;
 
     private String petname;
